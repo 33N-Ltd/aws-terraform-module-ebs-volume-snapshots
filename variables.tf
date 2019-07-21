@@ -10,7 +10,7 @@ variable "snapshot_time" {
   default     = "01:00"
 }
 
-variable "snapshot_number" {
+variable "snapshot_number_retained" {
   description = "Numnber of snapshots to retain"
   type        = "string"
   default     = "30"

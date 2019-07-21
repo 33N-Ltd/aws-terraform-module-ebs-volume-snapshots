@@ -1,5 +1,5 @@
 resource "aws_dlm_lifecycle_policy" "main" {
-  description        = "DLM lifecycle policy"
+  description        = "DLM Lifecycle Policy"
   execution_role_arn = "${aws_iam_role.dlm_lifecycle_role.arn}"
   state              = "ENABLED"
 
@@ -16,7 +16,7 @@ resource "aws_dlm_lifecycle_policy" "main" {
       }
 
       retain_rule {
-        count = "${var.snapshot_number}"
+        count = "${var.snapshot_number_retained}"
       }
 
       tags_to_add = {

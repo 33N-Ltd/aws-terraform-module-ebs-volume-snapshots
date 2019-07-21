@@ -1,5 +1,5 @@
 resource "aws_iam_role" "dlm_lifecycle_role" {
-  name = "dlm-lifecycle-role"
+  name = "EC2-DLM-LIFECYCLE-ROLE"
 
   assume_role_policy = <<EOF
 {
