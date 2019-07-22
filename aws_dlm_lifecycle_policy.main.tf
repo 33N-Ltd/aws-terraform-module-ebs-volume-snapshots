@@ -1,5 +1,5 @@
 resource "aws_dlm_lifecycle_policy" "main" {
-  description        = "DLM Lifecycle Policy"
+  description        = "Volume Snapshot Lifecycle Policy"
   execution_role_arn = "${aws_iam_role.dlm_lifecycle_role.arn}"
   state              = "ENABLED"
 

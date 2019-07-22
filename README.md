@@ -14,10 +14,10 @@ In your Terrafom, call the module with the required variables.
 
 ```
 module "ebs_volume_backups" {
-    source            = "git::ssh://git@github.com/osodevops/aws-terraform-module-s3.git/aws-terraform-module-ebs-volume-snapshots"
-    snapshot_interval = "24"
-    snapshot_time     = "01:00"
-    snapshot_number   = "30"
-    snapshot_tag      = "Backup"
+    source                      = "git::ssh://git@github.com/osodevops/aws-terraform-module-s3.git/aws-terraform-module-ebs-volume-snapshots"
+    snapshot_interval           = "24"
+    snapshot_time               = "01:00"
+    snapshot_number_retained    = "30"
+    snapshot_tag                = "Backup"
 }
 ```
