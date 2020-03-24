@@ -4,7 +4,7 @@ data "aws_iam_policy_document" "dlm_lifecycle" {
       "ec2:CreateSnapshot",
       "ec2:DeleteSnapshot",
       "ec2:DescribeVolumes",
-      "ec2:DescribeSnapshots"
+      "ec2:DescribeSnapshots",
     ]
     resources = [
       "*",
@@ -20,3 +20,4 @@ data "aws_iam_policy_document" "dlm_lifecycle" {
     ]
   }
 }
+
