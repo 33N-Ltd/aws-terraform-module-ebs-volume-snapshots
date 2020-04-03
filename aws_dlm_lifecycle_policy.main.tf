@@ -1,6 +1,6 @@
 resource "aws_dlm_lifecycle_policy" "main" {
   description        = "Volume Snapshot Lifecycle Policy"
-  execution_role_arn = "${aws_iam_role.dlm_lifecycle_role.arn}"
+  execution_role_arn = aws_iam_role.dlm_lifecycle_role.arn
   state              = "ENABLED"
 
   policy_details {
@@ -10,13 +10,13 @@ resource "aws_dlm_lifecycle_policy" "main" {
       name = "EBS snapshot policy"
 
       create_rule {
-        interval      = "${var.snapshot_interval}"
+        interval      = var.snapshot_interval
         interval_unit = "HOURS"
-        times         = ["${var.snapshot_time}"]
+        times         = [var.snapshot_time]
       }
 
       retain_rule {
-        count = "${var.snapshot_number_retained}"
+        count = var.snapshot_number_retained
       }
 
       tags_to_add = {
@@ -25,7 +25,8 @@ resource "aws_dlm_lifecycle_policy" "main" {
 
       copy_tags = true
     }
-
-    target_tags = "${map(var.snapshot_tag, "true")}"
+   
+    target_tags = map(var.snapshot_tag, "true")
   }
 }
+

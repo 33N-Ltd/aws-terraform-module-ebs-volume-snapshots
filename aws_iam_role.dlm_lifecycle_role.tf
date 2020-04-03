@@ -16,4 +16,6 @@ resource "aws_iam_role" "dlm_lifecycle_role" {
   ]
 }
 EOF
+
 }
+
